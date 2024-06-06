@@ -1,15 +1,50 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="description"
-        content="Occ3D: A Large-Scale 3D Occupancy Prediction Benchmark for Autonomous Driving.">
-  <meta name="keywords" content="Occupancy, Autonomous Driving">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</footer>
+    <title>简单计算器</title>
+</head>
+<body>
+    <h1>简单计算器</h1>
+    <form name="calculator">
+        <input type="text" name="display" id="display" disabled>
+        <br>
+        <button type="button" onclick="clearDisplay()">C</button>
+        <button type="button" onclick="input('1')">1</button>
+        <button type="button" onclick="input('2')">2</button>
+        <button type="button" onclick="input('3')">3</button>
+        <button type="button" onclick="operation('+')">+</button>
+        <br>
+        <button type="button" onclick="input('4')">4</button>
+        <button type="button" onclick="input('5')">5</button>
+        <button type="button" onclick="input('6')">6</button>
+        <button type="button" onclick="operation('-')">-</button>
+        <br>
+        <button type="button" onclick="input('7')">7</button>
+        <button type="button" onclick="input('8')">8</button>
+        <button type="button" onclick="input('9')">9</button>
+        <button type="button" onclick="operation('*')">*</button>
+        <br>
+        <button type="button" onclick="input('0')">0</button>
+        <button type="button" onclick="operation('/')">/</button>
+        <button type="button" onclick="calculate()">=</button>
+    </form>
 
+    <script>
+        function input(digit) {
+            document.calculator.display.value += digit;
+        }
 
+        function operation(op) {
+            document.calculator.display.value += op;
+        }
+
+        function calculate() {
+            document.calculator.display.value = eval(document.calculator.display.value);
+        }
+
+        function clearDisplay() {
+            document.calculator.display.value = '';
+        }
+    </script>
 </body>
 </html>
-
